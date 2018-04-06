@@ -1,9 +1,12 @@
 package com.example.traore.newsapp;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Item {
+public class Item implements Serializable{
+
+    private static final long serialVersionUID = -1213949467658913456L;
 
     private String title;
     private String body;

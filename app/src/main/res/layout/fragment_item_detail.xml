@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
         android:text="Item Title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -15,9 +15,8 @@
         android:id="@+id/tvBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTitle"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
         android:text="Item Body" />
 
 </RelativeLayout>

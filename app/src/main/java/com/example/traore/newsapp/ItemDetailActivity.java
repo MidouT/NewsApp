@@ -17,7 +17,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         Item item = (Item) getIntent().getSerializableExtra("item");
         if (savedInstanceState == null) {
             // Insert detail fragment based on the item passed
-            fragmentItemDetail = new ItemDetailFragment();
+            fragmentItemDetail = ItemDetailFragment.newInstance(item);
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.flDetailContainer, fragmentItemDetail);
             ft.commit();
