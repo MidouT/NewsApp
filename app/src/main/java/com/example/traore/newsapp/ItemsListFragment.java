@@ -1,7 +1,7 @@
 package com.example.traore.newsapp;
 
 import android.app.Activity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,8 +15,8 @@ import java.util.ArrayList;
 
 public class ItemsListFragment extends Fragment {
 
-    private ArrayAdapter<Item> adapterItems ;
-    private ListView listView ;
+    private ArrayAdapter<Item> adapterItems;
+    private ListView listView;
 
     private OnListItemSelectedListener listener;
 
@@ -57,11 +57,17 @@ public class ItemsListFragment extends Fragment {
         if (activity instanceof OnListItemSelectedListener) {
             listener = (OnListItemSelectedListener) activity;
         } else {
-            throw new ClassCastException(activity.toString()+ " must implement ItemsListFragment.OnListItemSelectedListener");
+            throw new ClassCastException(activity.toString() + " must implement ItemsListFragment.OnListItemSelectedListener");
         }
     }
 
     public interface OnListItemSelectedListener {
         void onItemSelected(Item item);
+    }
+
+    public void setActivateOnItemClick(boolean activateOnItemClick) {
+        // When setting CHOICE_MODE_SINGLE, ListView will automatically
+        // give items the 'activated' state when touched.
+        listView.setChoiceMode(activateOnItemClick ? ListView.CHOICE_MODE_SINGLE : ListView.CHOICE_MODE_NONE);
     }
 }
